@@ -90,12 +90,31 @@ FROM faturas
   ###2) Agora é necessário uma lista de faturas com o país de envio "EUA" e
 que a FormaeEnvio seja diferente de 3.
 
-
+SELECT
+	*
+FROM faturas
+	WHERE PaisEnvio LIKE "USA" AND FormaEnvio NOT LIKE 3
+	ORDER BY DataFatura ASC;
+	
   ###3) O cliente 'GOURL' fez um pedido? Sim.
 
-
+SELECT
+	*
+FROM faturas
+	WHERE ClienteID LIKE "GOURL"
+	ORDER BY DataFatura ASC;
+	
   ###4) Você deseja visualizar todas as faturas dos funcionários 2, 3, 5, 8 e 9.
-
+  
+SELECT
+	*
+FROM faturas
+	WHERE EmpregadoID LIKE 2
+    OR EmpregadoID LIKE 3
+    OR EmpregadoID LIKE 5
+    OR EmpregadoID LIKE 8
+    OR EmpregadoID LIKE 9
+	ORDER BY DataFatura ASC;
 
 
 
